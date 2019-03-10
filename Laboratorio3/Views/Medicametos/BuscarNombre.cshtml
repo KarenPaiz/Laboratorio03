@@ -1,0 +1,35 @@
+﻿
+@{
+                /**/
+
+                ViewBag.Title = "BuscarNombre";
+}
+
+<h2>El farmaco buscado por nombre es: </h2>
+<table style="width:100%">
+    <tr>
+        <th>Codigo</th>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+    </tr>
+
+    <tr>
+        <td>@ViewBag.Mostrar.Id</td>
+        <td>@ViewBag.Mostrar.Nombre</td>
+        <td>@ViewBag.Mostrar.Cantidad</td>
+        <td>@ViewBag.Mostrar.Precio</td>
+    </tr>
+
+
+</table>
+
+<br />
+<br />
+<form action="/Medicametos/MostrarIn" method="post">
+    <input type="submit" value="Mostrar InOrden">
+</form>
+<h2></h2>
+<form action="/Medicametos/Pedir" method="post">
+    <input type="submit" value="Realizar un pedido de este producto">
+</form> 

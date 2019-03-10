@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Pedir";
+}
+
+<h3>Realizar un pedido de: @ViewBag.Pedir.Nombre</h3>
+<h3></h3>
+<h3>Ingrese sus datos</h3>
+<form action="/Medicametos/RealizarPedido" method="post">
+    <h4>Nombre:</h4>
+    <input type="text" name="Nombre" />
+    <br><br />
+    <h4>Direccion de envio:</h4>
+    <input type="text" name="Direccion" />
+    <br><br />
+    <h4>Nit:</h4>
+    <input type="number" name="Nit" />
+    
+
+    <br><br />
+    <input type="submit" value="Ordenar" />
+</form>
+

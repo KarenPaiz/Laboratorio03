@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "NuevoMedicamento";
+}
+<h2>Agregar un nuevo medicamento</h2>
+<form action="/Medicametos/Ingresa" method="post">
+    <h3>Nombre:</h3>
+    <input type="text" name="Nombre" />
+    <br><br />
+    <h3>Id:</h3>
+    <input type="number" name="Id" />
+    <br><br/>
+    <h3>Precio:</h3>
+    <input type="number" step="any" name="Precio" />
+    <br><br />
+    <input type="submit" value="Agregar" />
+</form>

@@ -1,0 +1,22 @@
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio 3\Laboratorio3\ArbolBinario\obj\Debug\ArbolBinario.csprojAssemblyReference.cache
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio 3\Laboratorio3\ArbolBinario\obj\Debug\ArbolBinario.csproj.CoreCompileInputs.cache
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio 3\Laboratorio3\ArbolBinario\bin\Debug\ArbolBinario.exe.config
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio 3\Laboratorio3\ArbolBinario\bin\Debug\ArbolBinario.exe
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio 3\Laboratorio3\ArbolBinario\bin\Debug\ArbolBinario.pdb
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio 3\Laboratorio3\ArbolBinario\obj\Debug\ArbolBinario.exe
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio 3\Laboratorio3\ArbolBinario\obj\Debug\ArbolBinario.pdb
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio 3\Laboratorio3\ArbolBinario\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio 3\Laboratorio3\ArbolBinario\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio 3\Laboratorio3\ArbolBinario\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio 3\Laboratorio3\ArbolBinario\obj\Debug\ArbolBinario.csproj.CopyComplete
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio3\ArbolBinario\bin\Debug\ArbolBinario.exe.config
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio3\ArbolBinario\bin\Debug\ArbolBinario.exe
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio3\ArbolBinario\bin\Debug\ArbolBinario.pdb
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio3\ArbolBinario\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio3\ArbolBinario\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio3\ArbolBinario\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio3\ArbolBinario\obj\Debug\ArbolBinario.csprojAssemblyReference.cache
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio3\ArbolBinario\obj\Debug\ArbolBinario.csproj.CoreCompileInputs.cache
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio3\ArbolBinario\obj\Debug\ArbolBinario.csproj.CopyComplete
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio3\ArbolBinario\obj\Debug\ArbolBinario.exe
+C:\Users\Karen\Desktop\Semestre III\Estructura de datos\Labotatorio\Laboratorio3\ArbolBinario\obj\Debug\ArbolBinario.pdb

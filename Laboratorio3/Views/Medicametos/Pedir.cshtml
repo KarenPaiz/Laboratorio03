@@ -2,7 +2,9 @@
 @{
     ViewBag.Title = "Pedir";
 }
-
+<h2> 1 </h2>
+<h2></h2>
+<h2></h2>
 <h3>Realizar un pedido de: @ViewBag.Pedir.Nombre</h3>
 <h3></h3>
 <h3>Ingrese sus datos</h3>
@@ -15,7 +17,8 @@
     <br><br />
     <h4>Nit:</h4>
     <input type="number" name="Nit" />
-    
+    <h4>Cantidad del farmaco:</h4>
+    <input type="number" min="1" max="@ViewBag.Pedir.Cantidad" name="Cantidad" />
 
     <br><br />
     <input type="submit" value="Ordenar" />

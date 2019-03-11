@@ -52,153 +52,89 @@ namespace ArbolBinario
         }
     
 
-        //ELIMINA Y REAJUSTA LOS NODOS 
-        void Reajuste1(Nodo nNodo)
+        public void EliminarElemento(Medicamento item)
         {
-            if (nNodo.izquierdo != null)
+            Nodo anterior = null;
+            Nodo recorre = null;
+            Nodo AUX = null;
+            recorre = Raiz;
+            while (recorre != null && recorre.Medicamento !=null && recorre.Medicamento.Nombre != item.Nombre)
             {
-                if (nNodo.Derecho == null)
-                {
-                    nNodo.Derecho = nNodo.izquierdo;
-                    nNodo.izquierdo = null;
-                }
-                else
-                {
-                    Reajuste1(nNodo.Derecho);
-                    nNodo.Derecho.izquierdo = nNodo.izquierdo;
-                    nNodo.izquierdo = null;
-                }
-            }
-        }
-        void BuscaEliminar(Nodo nNodo, int data)
-        {
-            bool salir = false;
-            if (nNodo != null && nNodo.Medicamento.Id != data && salir != true)
-            {
-                if (nNodo.Derecho != null)
-                {
-                    if (nNodo.Derecho.Medicamento.Id == data)
-                    {
-                        salir = true;
-                    }
-                    else
-                    {
-                        if (data > nNodo.Medicamento.Id)
-                        {
-                            BuscaEliminar(nNodo.Derecho, data);
-                        }
-                        if (nNodo.izquierdo != null && data < nNodo.Medicamento.Id)
-                        {
-                            BuscaEliminar(nNodo.izquierdo, data);
-                        }
-                    }
-                }
-                else if (nNodo.izquierdo != null)
-                {
-                    if (nNodo.izquierdo.Medicamento.Id == data)
-                    {
-                        salir = true;
-                    }
-                    else
-                    {
-                        if (data < nNodo.Medicamento.Id)
-                        {
-                            BuscaEliminar(nNodo.izquierdo, data);
-                        }
-                        else if (nNodo.Derecho != null && data > nNodo.Medicamento.Id)
-                        {
-                            BuscaEliminar(nNodo.Derecho, data);
-                        }
-                    }
-                }
+                anterior = recorre;
+                int comparison = String.Compare(item.Nombre, recorre.Medicamento.Nombre, comparisonType: StringComparison.OrdinalIgnoreCase);
 
+                if (comparison < 1)
+                    recorre = recorre.izquierdo;
+                else
+                    recorre = recorre.Derecho;
             }
-            if (nNodo.izquierdo != null && nNodo.izquierdo.Medicamento.Id == data)
+            Nodo guarda = null;
+            if (recorre != null && recorre.izquierdo ==null && recorre.Derecho == null)
+                recorre.Medicamento = null;
+
+            if (recorre != null && recorre.izquierdo == null && recorre.Derecho != null)
             {
-                if (nNodo.izquierdo.izquierdo == null && nNodo.izquierdo.Derecho == null)
+                guarda = recorre.Derecho;
+                recorre.Derecho.Medicamento = null;
+                recorre.Medicamento = guarda.Medicamento;
+            }
+            
+
+            if (recorre != null && recorre.izquierdo != null && recorre.Derecho == null)
+            {
+                guarda = recorre.izquierdo;
+                recorre.izquierdo.Medicamento = null;
+                recorre.Medicamento = guarda.Medicamento;
+            }
+
+            if (recorre != null && recorre.izquierdo != null && recorre.Derecho != null)
+            {                
+                Nodo recorre2 = null;
+                Nodo ant2 = null;
+                recorre2 = recorre.Derecho;
+                while (recorre2 != null)
                 {
-                    nNodo.izquierdo = null;
+                    ant2 = recorre2;
+                    recorre2 = recorre2.izquierdo;
+                }
+                AUX = ant2;
+                if (ant2.Derecho != null)
+                {
+                    guarda = ant2.Derecho;
+                    ant2.Derecho = null;
+                    recorre.Derecho = guarda;
+                    recorre.Medicamento = AUX.Medicamento;
                 }
                 else
                 {
-                    Reajuste1(nNodo.izquierdo);
-                    if (nNodo.izquierdo.Derecho != null)
-                    {
-                        nNodo.izquierdo = nNodo.izquierdo.Derecho;
-                    }
+                    recorre.Medicamento = AUX.Medicamento;
+                    ant2.Medicamento = null;
                 }
-                ContadorNodos--;
-            }
-            if (nNodo.Derecho != null && nNodo.Derecho.Medicamento.Id == data)
-            {
-                if (nNodo.Derecho.izquierdo == null && nNodo.Derecho.Derecho == null)
-                {
-                    nNodo.Derecho = null ;
-                }
-                else
-                {
-                    Reajuste1(nNodo.Derecho);
-                    if (nNodo.Derecho.Derecho != null)
-                    {
-                        nNodo.Derecho = nNodo.Derecho.Derecho;
-                    }
-                }
-                ContadorNodos--;
-            }
-        }
-        public void EliminarElemento(int piCodigoElemento)
-        {
-            if (Raiz.Medicamento.Id == piCodigoElemento)
-            {
-                if (Raiz.Derecho!= null)
-                {
-                    Reajuste1(Raiz);
-                    Raiz = Raiz.Derecho;
-                    ContadorNodos--;
-                }
-                else if (Raiz.izquierdo != null)
-                {
-                    Reajuste1(Raiz);
-                    Raiz = Raiz.Derecho;
-                    ContadorNodos--;
-                }
-                else
-                {
-                    Raiz = null;
-                    ContadorNodos--;
-                }
-            }
-            else
-            {
-                BuscaEliminar(Raiz, piCodigoElemento);
             }
         }
 
         //BUSCAR UN ELEMENTO, REGRESA UN NODO
-        public Nodo AuxBusqueda; // VARIABLE PARA GUARDAR EL ELEMENTO ENCONTRADO
+        Nodo AuxBusqueda; // VARIABLE PARA GUARDAR EL ELEMENTO ENCONTRADO
         public Nodo BuscaRegresa(Medicamento data)
         {
             AuxBusqueda = null;
-            Busca(Raiz, data.Id);
+            Busca(Raiz, data);
             return AuxBusqueda;
         }
-        void Busca(Nodo nNodo, int data)
-        {
-            if (nNodo != null && nNodo.Medicamento.Id != data)
+        void Busca(Nodo nNodo, Medicamento item)
+        { 
+            Nodo recorre = null;
+            recorre = Raiz;
+            while (recorre.Medicamento.Nombre != item.Nombre && recorre!= null)
             {
-                if (data < nNodo.Medicamento.Id)
-                {
-                    Busca(nNodo.izquierdo, data);
-                }
-                if (data > nNodo.Medicamento.Id)
-                {
-                    Busca(nNodo.Derecho, data);
-                }
+                int comparison = String.Compare(item.Nombre, recorre.Medicamento.Nombre, comparisonType: StringComparison.OrdinalIgnoreCase);
+
+                if (comparison < 1)
+                    recorre = recorre.izquierdo;
+                else
+                    recorre = recorre.Derecho;
             }
-            if (nNodo.Medicamento.Id == data)
-            {
-                AuxBusqueda = nNodo;
-            }
+            AuxBusqueda = recorre;
         }
         
 
@@ -207,28 +143,26 @@ namespace ArbolBinario
         {
             BuscaActualiza(Raiz, data);
         }
-        void BuscaActualiza(Nodo nNodo, Medicamento data)
+        void BuscaActualiza(Nodo nNodo, Medicamento item)
         {
-            if (nNodo != null && nNodo.Medicamento.Id != data.Id)
+            Nodo recorre = null;
+            recorre = Raiz;
+            while (recorre.Medicamento.Nombre != item.Nombre && recorre != null)
             {
-                if (data.Id < nNodo.Medicamento.Id)
-                {
-                    BuscaActualiza(nNodo.izquierdo, data);
-                }
-                if (data.Id > nNodo.Medicamento.Id)
-                {
-                    BuscaActualiza(nNodo.Derecho, data);
-                }
+                int comparison = String.Compare(item.Nombre, recorre.Medicamento.Nombre, comparisonType: StringComparison.OrdinalIgnoreCase);
+
+                if (comparison < 1)
+                    recorre = recorre.izquierdo;
+                else
+                    recorre = recorre.Derecho;
             }
-            if (nNodo.Medicamento.Id == data.Id)
-            {
-                nNodo.Medicamento = data;
-            }
+            if (recorre.Medicamento.Nombre == item.Nombre && recorre != null)
+                recorre.Medicamento.Cantidad = item.Cantidad;
         }
 
         //REGRESA UN VECTOR DE MEDICAMENTOS SEGUN PRE(0), POST(1), INORDEN(2) PARA MOSTRAR AL USUARIO
-        public Medicamento[] medicamentos; //VAR universal para guardar medicamentos
-        public int AA;
+        Medicamento[] medicamentos; //VAR universal para guardar medicamentos
+        int AA;
         public Medicamento[] Mostrar(int opcion, int cant)
         {
             medicamentos = new Medicamento[cant];

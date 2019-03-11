@@ -10,17 +10,24 @@
     <tr>
         <th>Codigo</th>
         <th>Nombre</th>
-        <th>Cantidad</th>
+        <th>Descripción</th>
+        <th>Casa Productra</th>
+        <th>Unidades Disponibles</th>
         <th>Precio</th>
     </tr>
     @foreach (var item in ViewBag.Matriz)
     {
+        if (item != null)
+        {
         <tr>
             <td>@item.Id</td>
             <td>@item.Nombre</td>
+            <td>@item.descripcion</td>
+            <td>@item.Productora</td>
             <td>@item.Cantidad</td>
             <td>@item.Precio</td>
         </tr>
+        }
     }
 </table>
 <br />

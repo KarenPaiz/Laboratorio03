@@ -2,32 +2,32 @@
 @{
     ViewBag.Title = "MostrarIn";
 }
-
+<br />
+<br />
 <h2>Medicamentos InOrden</h2>
-
 <table style="width:100%">
-
     <tr>
-        <th>Codigo</th>
+        <th>Código</th>
         <th>Nombre</th>
-        <th>Cantidad</th>
+        <th>Descripción</th>
+        <th>Casa Productora</th>
+        <th>Unidades Disponibles</th>
         <th>Precio</th>
     </tr>
     @foreach (var item in ViewBag.Matriz)
     {
-        <tr>
-            <td>@item.Id</td>
-            <td>@item.Nombre</td>
-            <td>@item.Cantidad</td>
-            <td>@item.Precio</td>
-        </tr>
+        if (item != null)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Nombre</td>
+                <td>@item.descripcion</td>
+                <td>@item.Productora</td>
+                <td>@item.Cantidad</td>
+                <td>$@item.Precio</td>
+            </tr>
+        }
     }
 </table>
 <br />
 <br />
-<form action="/Medicametos/MostrarPre" method="post">
-    <input type="submit" value="Mostrar PreOrden">
-</form>
-<form action="/Medicametos/MostrarPost" method="post">
-    <input type="submit" value="Mostrar PostOrden">
-</form> 
